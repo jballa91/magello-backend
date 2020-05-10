@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "magello_app",
+    "password": "test",
+    "database": "magello_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "test": {
+    "username": "magello_app",
+    "password": "test",
+    "database": "magello_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "production": {
+    "username": "magello_app",
+    "password": "test",
+    "database": "magello_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "use_env_variable": "DATABASE_URL"
+  }
+}
