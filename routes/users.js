@@ -10,8 +10,8 @@ router.patch(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { email, given_name, family_name } = req.body;
-    const user = await User.create({ email, given_name, family_name });
+    const { email, nickname } = req.body;
+    const user = await User.create({ email, nickname });
 
     res.status(201).json({
       user: { id: user.id },
@@ -23,7 +23,7 @@ router.get(
   "/:id",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const userId = parseInt(req.params.user_id, 10);
+    const userId = parseInt(req.params.id, 10);
     const user = await User.findByPk(userId);
     res.json({ user });
   })
@@ -33,7 +33,7 @@ router.get(
   "/:id/boards",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const userId = parseInt(req.params.user_id, 10);
+    const userId = parseInt(req.params.id, 10);
     const boards = await Board.findAll({
       where: { userId },
     });

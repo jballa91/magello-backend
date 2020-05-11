@@ -13,10 +13,7 @@ module.exports = {
         unique: true,
         type: Sequelize.STRING,
       },
-      given_name: {
-        type: Sequelize.STRING,
-      },
-      family_name: {
+      nickname: {
         type: Sequelize.STRING,
       },
       createdAt: {
