@@ -10,8 +10,9 @@ router.get(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
+    const userId = req.userId;
     const boards = await Board.findAll({
-      where: { userId: req.params.userId },
+      where: { userId },
     });
     res.json({ boards });
   })
@@ -24,6 +25,17 @@ router.post(
     const { name, userId } = req.body;
     const board = await Board.create({ name, userId });
     res.json({ board });
+  })
+);
+
+router.delete(
+  "/",
+  jwtCheck,
+  asyncHandler(async (req, res) => {
+    const { boardId } = req.body;
+    const boardToDelete = await Board.findByPk(boardId);
+    await boardToDelete.destroy();
+    res.json({ boardToDelete });
   })
 );
 module.exports = router;

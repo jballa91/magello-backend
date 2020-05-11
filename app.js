@@ -13,7 +13,7 @@ app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/users/:id/boards", boardsRouter);
+app.use("/boards", boardsRouter);
 
 app.get("/", (req, res) => {
   res.send("Index Root");
