@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = function (models) {
-    User.hasMany(models.Boards, {
+    User.hasMany(models.Board, {
       foreignKey: "userId",
       onDelete: "CASCADE",
       hooks: true,

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE",
       hooks: true,
     });
-    List.belongsTo(models.Baord, {
+    List.belongsTo(models.Board, {
       foreignKey: "boardId",
     });
   };
