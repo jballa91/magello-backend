@@ -25,7 +25,7 @@ router.patch(
         { where: { email } }
       );
       res.status(201).json({
-        loggedUser,
+        user,
       });
     }
   })
