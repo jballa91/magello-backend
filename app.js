@@ -5,6 +5,13 @@ const jwks = require("jwks-rsa");
 
 const app = express();
 
+app.use(cors({ origin: "http://localhost:3000" }));
+
+const authConfig = {
+  domain: "dev-ph-3iama.auth0.com",
+  audience: "http://magello-api",
+};
+
 const jwtCheck = jwt({
   secret: jwks.expressJwtSecret({
     cache: true,
@@ -17,14 +24,14 @@ const jwtCheck = jwt({
   algorithms: ["RS256"],
 });
 
-app.use(jwtCheck);
-
 app.get("/", (req, res) => {
-  res.send("Root Index");
+  res.send("Index Root");
 });
 
-app.get("/authorized", (req, res) => {
-  res.send("Secured Resource");
+app.get("/api/external", jwtCheck, (req, res) => {
+  res.send({
+    msg: "Your Access Token was successfully validated!",
+  });
 });
 
 module.exports = app;
