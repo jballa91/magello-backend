@@ -15,3 +15,5 @@ router.post(
     res.json({ board });
   })
 );
+
+module.exports = router;

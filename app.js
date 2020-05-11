@@ -4,7 +4,7 @@ const { authConfig, jwtCheck } = require("./auth");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const boardsRouter = require("./rotues/boards");
+const boardsRouter = require("./routes/boards");
 
 const app = express();
 

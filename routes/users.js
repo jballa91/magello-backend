@@ -6,16 +6,15 @@ const db = require("../db/models");
 const { User, Board } = db;
 const router = express.Router();
 
-router.post(
+router.patch(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.create({ email, password });
+    const { email, given_name, family_name } = req.body;
+    const user = await User.create({ email, given_name, family_name });
 
     res.status(201).json({
       user: { id: user.id },
-      token,
     });
   })
 );
