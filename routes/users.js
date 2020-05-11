@@ -28,10 +28,6 @@ router.patch(
         user,
       });
     }
-
-    res.status(201).json({
-      user: { id: user.id },
-    });
   })
 );
 
