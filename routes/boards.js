@@ -27,22 +27,24 @@ router.put(
     });
 
     if (req.user.id !== board.userId) {
-      const err = new Error('Unauthorized');
-      err.status=401;
+      const err = new Error("Unauthorized");
+      err.status = 401;
       err.message = "You are not authorized to edit this Board.";
       err.title = "Unauthorized";
       throw err;
     }
     if (board) {
-      await board.update({name: req.body.name});
-      res.json({board});
+      await board.update({ name: req.body.name });
+      res.json({ board });
     } else {
       next();
     }
   })
 );
 
-router.delete('./:id', jwtCheck, asyncHandler(async (req, res, next)=> {
-  const board = await 
-}));
+router.delete(
+  "./:id",
+  jwtCheck,
+  asyncHandler(async (req, res, next) => {})
+);
 module.exports = router;
