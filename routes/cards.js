@@ -3,7 +3,7 @@ const { asyncHandler } = require("../utils");
 const { jwtCheck } = require("../auth");
 
 const db = require("../db/models");
-const { List, Card } = db;
+const { Card } = db;
 const router = express.Router();
 
 router.post(

@@ -11,19 +11,16 @@ router.patch(
   jwtCheck,
   asyncHandler(async (req, res) => {
     const { email, nickname } = req.body;
-    const user = await User.findOne({
+    let user = await User.findOne({
       where: { email },
     });
     if (!user) {
-      const newUser = await User.create({ email, nickname });
+      user = await User.create({ email, nickname });
       res.status(201).json({
-        newUser,
+        user,
       });
     } else {
-      const loggedUser = await User.update(
-        { email, nickname },
-        { where: { email } }
-      );
+      user = await User.update({ email, nickname }, { where: { email } });
       res.status(201).json({
         user,
       });
