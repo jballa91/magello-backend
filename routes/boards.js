@@ -3,18 +3,18 @@ const { asyncHandler } = require("../utils");
 const { jwtCheck } = require("../auth");
 
 const db = require("../db/models");
-const { User, Board } = db;
+const { Board, List } = db;
 const router = express.Router();
 
 router.get(
-  "/",
+  "/:id",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const userId = req.userId;
-    const boards = await Board.findAll({
-      where: { userId },
+    const boardId = parseInt(req.params.id, 10);
+    const lists = await List.findAll({
+      where: { boardId },
     });
-    res.json({ boards });
+    res.json({ lists });
   })
 );
 

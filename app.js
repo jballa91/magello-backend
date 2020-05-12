@@ -5,6 +5,8 @@ const { authConfig, jwtCheck } = require("./auth");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const boardsRouter = require("./routes/boards");
+const listsRouter = require("./routes/lists");
+const cardsRouter = require("./routes/cards");
 
 const app = express();
 
@@ -14,6 +16,8 @@ app.use(cors({ origin: "http://localhost:3000" }));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/boards", boardsRouter);
+app.use("/lists", listsRouter);
+app.use("/cards", cardsRouter);
 
 app.get("/", (req, res) => {
   res.send("Index Root");

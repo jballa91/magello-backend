@@ -13,7 +13,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       complete: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
       },
       boardId: {
