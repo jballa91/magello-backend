@@ -20,7 +20,7 @@ router.patch(
         user,
       });
     } else {
-      user = await User.update({ email, nickname }, { where: { email } });
+      oldUser = await User.update({ email, nickname }, { where: { email } });
       res.status(201).json({
         user,
       });
