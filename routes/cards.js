@@ -17,11 +17,11 @@ router.post(
 );
 
 router.delete(
-  "/",
+  "/:id",
   jwtCheck,
   asyncHandler(async (req, res) => {
     const { id } = req.body;
-    const cardToDelete = await Board.findByPk(id);
+    const cardToDelete = await Card.findByPk(id);
     await cardToDelete.destroy();
     res.json({ cardToDelete });
   })

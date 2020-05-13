@@ -28,4 +28,15 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  jwtCheck,
+  asyncHandler(async (req, res) => {
+    const { id } = req.body;
+    const listToDelete = await List.findByPk(id);
+    await listToDelete.destroy();
+    res.json({ ListToDelete });
+  })
+);
+
 module.exports = router;
