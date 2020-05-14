@@ -11,10 +11,11 @@ router.get(
   jwtCheck,
   asyncHandler(async (req, res) => {
     const boardId = parseInt(req.params.id, 10);
+    const board = await Board.findByPk(boardId);
     const lists = await List.findAll({
       where: { boardId },
     });
-    res.json({ lists });
+    res.json({ board, lists });
   })
 );
 
