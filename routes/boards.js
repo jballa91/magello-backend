@@ -23,8 +23,8 @@ router.post(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { name, userId } = req.body;
-    const board = await Board.create({ name, userId });
+    const { name, userId, backgroundColor } = req.body;
+    const board = await Board.create({ name, userId, backgroundColor });
     res.json({ board });
   })
 );
