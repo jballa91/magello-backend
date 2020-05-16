@@ -10,8 +10,8 @@ router.post(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { listId, name } = req.body;
-    const card = await Card.create({ name, listId, complete: false });
+    const { listId, name, data } = req.body;
+    const card = await Card.create({ name, listId, data, complete: false });
     res.json({ card });
   })
 );
