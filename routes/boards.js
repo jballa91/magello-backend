@@ -1,21 +1,37 @@
 const express = require("express");
+const fetch = require("node-fetch");
 const { asyncHandler } = require("../utils");
 const { jwtCheck } = require("../auth");
 
 const db = require("../db/models");
-const { Board, List } = db;
+const { User, Board, List } = db;
 const router = express.Router();
 
 router.get(
   "/:id",
   jwtCheck,
   asyncHandler(async (req, res) => {
+    const userToken = req.headers["authorization"];
     const boardId = parseInt(req.params.id, 10);
+
+    const userAuth0 = await fetch("https://dev-ph-3iama.auth0.com/userinfo", {
+      headers: {
+        Authorization: `${userToken}`,
+      },
+    });
+
+    const userInfo = await userAuth0.json();
     const board = await Board.findByPk(boardId);
+    const user = await User.findOne({ where: { email: userInfo.email } });
+    const userCheck = await User.findOne({ where: { id: board.userId } });
     const lists = await List.findAll({
       where: { boardId },
     });
-    res.json({ board, lists });
+    if (user.email === userCheck.email) {
+      res.json({ board, lists });
+    } else {
+      res.status(401).end();
+    }
   })
 );
 
