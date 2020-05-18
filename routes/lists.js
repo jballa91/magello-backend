@@ -35,7 +35,7 @@ router.delete(
     const { id } = req.body;
     const listToDelete = await List.findByPk(id);
     await listToDelete.destroy();
-    res.json({ ListToDelete });
+    res.json({ listToDelete });
   })
 );
 

@@ -25,7 +25,8 @@ app.get("/", (req, res) => {
 
 app.get("/api/external", jwtCheck, (req, res) => {
   res.send({
-    msg: "Your Access Token was successfully validated!",
+    msg:
+      "You are free to connect to the database and see any information that belongs to you! However, stay away from other users' data. Tharr be monsters. Yee have been warrrned...",
   });
 });
 
