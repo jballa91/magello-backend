@@ -15,6 +15,10 @@ module.exports = {
       complete: {
         type: Sequelize.BOOLEAN,
       },
+      index: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
       boardId: {
         allowNull: false,
         type: Sequelize.INTEGER,

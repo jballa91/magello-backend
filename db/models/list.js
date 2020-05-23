@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       complete: DataTypes.BOOLEAN,
+      index: DataTypes.INTEGER,
       boardId: DataTypes.INTEGER,
     },
     {}

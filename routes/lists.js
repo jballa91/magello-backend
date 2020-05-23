@@ -22,8 +22,8 @@ router.post(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { boardId, name } = req.body;
-    const list = await List.create({ name, boardId, complete: false });
+    const { boardId, name, index } = req.body;
+    const list = await List.create({ name, boardId, index, complete: false });
     res.json({ list });
   })
 );

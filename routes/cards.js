@@ -10,9 +10,27 @@ router.post(
   "/",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { listId, name, data } = req.body;
-    const card = await Card.create({ name, listId, data, complete: false });
+    const { listId, name, data, index } = req.body;
+    const card = await Card.create({
+      name,
+      listId,
+      data,
+      index,
+      complete: false,
+    });
     res.json({ card });
+  })
+);
+
+router.patch(
+  "/:id",
+  jwtCheck,
+  asyncHandler(async (req, res) => {
+    const { id, index } = req.body;
+    const card = await Card.update({ index }, { where: { id } });
+    res.status(201).json({
+      card,
+    });
   })
 );
 

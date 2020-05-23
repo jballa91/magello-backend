@@ -4,7 +4,7 @@ const { asyncHandler } = require("../utils");
 const { jwtCheck } = require("../auth");
 
 const db = require("../db/models");
-const { User, Board, List } = db;
+const { User, Board, List, Card } = db;
 const router = express.Router();
 
 router.get(
@@ -26,6 +26,8 @@ router.get(
     const userCheck = await User.findOne({ where: { id: board.userId } });
     const lists = await List.findAll({
       where: { boardId },
+      order: [["index", "ASC"]],
+      include: Card,
     });
     if (user.email === userCheck.email) {
       res.json({ board, lists });

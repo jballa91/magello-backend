@@ -6,6 +6,7 @@ module.exports = {
       {
         name: "Test List",
         complete: false,
+        index: 0,
         boardId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -13,6 +14,7 @@ module.exports = {
       {
         name: "First Location",
         complete: false,
+        index: 0,
         boardId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -20,6 +22,7 @@ module.exports = {
       {
         name: "Second Location",
         complete: false,
+        index: 1,
         boardId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -27,6 +30,7 @@ module.exports = {
       {
         name: "Third Location",
         complete: false,
+        index: 2,
         boardId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -34,6 +38,7 @@ module.exports = {
       {
         name: "Hip-Hop",
         complete: false,
+        index: 0,
         boardId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -41,6 +46,7 @@ module.exports = {
       {
         name: "Alternative Rock",
         complete: false,
+        index: 1,
         boardId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -48,6 +54,7 @@ module.exports = {
       {
         name: "Jazz",
         complete: false,
+        index: 2,
         boardId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -55,6 +62,7 @@ module.exports = {
       {
         name: "Classics",
         complete: false,
+        index: 3,
         boardId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -62,6 +70,7 @@ module.exports = {
       {
         name: "First Location",
         complete: false,
+        index: 0,
         boardId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -69,6 +78,7 @@ module.exports = {
       {
         name: "Second Location",
         complete: false,
+        index: 1,
         boardId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -76,6 +86,7 @@ module.exports = {
       {
         name: "Third Location",
         complete: false,
+        index: 2,
         boardId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -83,6 +94,7 @@ module.exports = {
       {
         name: "Speed-Type",
         complete: false,
+        index: 0,
         boardId: 5,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -90,6 +102,7 @@ module.exports = {
       {
         name: "Heavy-Type",
         complete: false,
+        index: 1,
         boardId: 5,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -97,6 +110,7 @@ module.exports = {
       {
         name: "Brawler-Type",
         complete: false,
+        index: 2,
         boardId: 5,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -104,6 +118,7 @@ module.exports = {
       {
         name: "Ranged-Type",
         complete: false,
+        index: 3,
         boardId: 5,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -111,6 +126,7 @@ module.exports = {
       {
         name: "Mystery",
         complete: false,
+        index: 0,
         boardId: 6,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -118,6 +134,7 @@ module.exports = {
       {
         name: "Nonfiction",
         complete: false,
+        index: 1,
         boardId: 6,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -125,6 +142,7 @@ module.exports = {
       {
         name: "Sci-fi",
         complete: false,
+        index: 2,
         boardId: 6,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -132,6 +150,7 @@ module.exports = {
       {
         name: "Fantasy",
         complete: false,
+        index: 3,
         boardId: 6,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -139,6 +158,7 @@ module.exports = {
       {
         name: "Books",
         complete: false,
+        index: 0,
         boardId: 7,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -146,6 +166,7 @@ module.exports = {
       {
         name: "Movies",
         complete: false,
+        index: 1,
         boardId: 7,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -153,6 +174,7 @@ module.exports = {
       {
         name: "Comedies",
         complete: false,
+        index: 0,
         boardId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -160,6 +182,7 @@ module.exports = {
       {
         name: "Dramas",
         complete: false,
+        index: 1,
         boardId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -167,6 +190,7 @@ module.exports = {
       {
         name: "Horror",
         complete: false,
+        index: 2,
         boardId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -174,6 +198,7 @@ module.exports = {
       {
         name: "Documentary",
         complete: false,
+        index: 3,
         boardId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -181,6 +206,7 @@ module.exports = {
       {
         name: "Cartoons",
         complete: false,
+        index: 4,
         boardId: 8,
         createdAt: new Date(),
         updatedAt: new Date(),
