@@ -13,6 +13,7 @@ router.get(
     const listId = parseInt(req.params.id, 10);
     const cards = await Card.findAll({
       where: { listId },
+      order: [["index", "ASC"]],
     });
     res.json({ cards });
   })

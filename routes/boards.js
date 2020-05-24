@@ -26,8 +26,11 @@ router.get(
     const userCheck = await User.findOne({ where: { id: board.userId } });
     const lists = await List.findAll({
       where: { boardId },
-      order: [["index", "ASC"]],
       include: Card,
+      order: [
+        ["index", "ASC"],
+        [Card, "index", "ASC"],
+      ],
     });
     if (user.email === userCheck.email) {
       res.json({ board, lists });
