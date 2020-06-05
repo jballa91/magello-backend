@@ -26,8 +26,8 @@ router.patch(
   "/:id",
   jwtCheck,
   asyncHandler(async (req, res) => {
-    const { id, index } = req.body;
-    const card = await Card.update({ index }, { where: { id } });
+    const { id, index, listId } = req.body;
+    const card = await Card.update({ index, listId }, { where: { id } });
     res.status(201).json({
       card,
     });
